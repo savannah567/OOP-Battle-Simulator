@@ -1,6 +1,7 @@
 import random
 from goblin import Goblin
 from hero import Hero
+from boss import Weeping_Angel
 
 def main():
     print("Welcome to the Battle Arena!")
@@ -54,6 +55,18 @@ def main():
     print(f"Total number of rounds survived: {rounds}")
     print(f"Total Damage: {total_damage}")
     
+    if hero.is_alive():
+        print("BOSS BATTLE INCOMING")
+        Weeping_Angel = Weeping_Angel("Angel")
+        while hero.is_alive() and Weeping_Angel.is_alive():
+            damage = hero.strike()
+            Weeping_Angel.take_damage(damage)
+            damage = Weeping_Angel.attack()
+            hero.receive_damage(damage)
+    if hero.is_alive():
+        print("Hero has successfully deafeated the boss!")
+    else:
+        print("The hero has been defeated by the boss.")
     # Final tally of goblins defeated
     print(f"Total goblins defeated: {defeated_goblins} / {len(goblins)}")
 
