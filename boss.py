@@ -8,7 +8,7 @@ class Weeping_Angel(Enemy):
         self.health = 400
         self.attack_power = 15
 
-    def stealth():
+    def stealth(self):
         print("*All of the sudden you feel a stone statue standing behind you*")
 
     def take_damage(self, damage):
