@@ -30,6 +30,8 @@ class Hero:
 
     def is_alive(self):
         return self.health > 0
+    def not_alive(self):
+        return self.health == 0
     
 
 
